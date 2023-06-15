@@ -8,6 +8,9 @@ CANVAS_HEIGHT = canvas.height = 1000;
 const numberOfEnemies = 100;
 const enemiesArray = [];
 
+const enemyImage = new Image();
+enemyImage.src = 'img/enemy1.png';
+
 class Enemy {
     constructor(){
         this.x = Math.random() * canvas.width;
@@ -23,7 +26,8 @@ class Enemy {
     }
 
     draw(){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(enemyImage, this.x, this.y);
     }
 }
 
@@ -35,11 +39,10 @@ console.log('EnemiesArray: ', enemiesArray);
 
 function animate(){
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-
     enemiesArray.forEach(enemy => {
         enemy.update();
         enemy.draw();
-    })
+    });
     requestAnimationFrame(animate);
 };
 
