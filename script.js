@@ -12,19 +12,23 @@ class Enemy {
         this.width = 100;
         this.height = 100;
     }
+
+    update(){
+        this.x++;
+        this.y++;
+    }
+
+    draw(){
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
 }
 
 const enemy1 = new Enemy();
-const enemy2 = new Enemy();
 
 function animate(){
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    enemy1.x++;
-    enemy1.y++;
-    enemy2.x += 2;
-    enemy2.y += 2;
-    ctx.fillRect(enemy1.x, enemy1.y, enemy1.width, enemy1.height);
-    ctx.fillRect(enemy2.x, enemy2.y, enemy2.width, enemy2.height);
+    enemy1.update();
+    enemy1.draw();
     requestAnimationFrame(animate);
 };
 
