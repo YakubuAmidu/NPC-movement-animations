@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss style.css -w" 
+  },
   "dependencies": {
     "node-sass": "^9.0.0"
   }
