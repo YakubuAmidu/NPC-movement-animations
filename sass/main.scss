@@ -1,15 +1,26 @@
+// BLACK(HEX)
 $color-black: #000;
+
+// WHITE(HEX)
 $color-white: #fff;
+
+// GREEN(HEX)
 $color-light-green: rgb(135, 235, 135);
 $color-medium-green: rgb(45, 167, 45);
 $color-dark-green: rgb(14, 93, 14);
-$color-gray-dark: #777;
 
+// GRAY(HEX)
+$color-light-gray: rgba(229, 227, 227, 0.4);
+$color-medium-gray: rgba(159, 159, 159, 0.6);
+$color-dark-gray: rgba(89, 88, 88, 0.8);
+
+// WIDTH AND HEIGHT
 $height: 1000px;
 $width: 500px;
 
 #canvas1 {
     border: 3px solid $color-black;
+    background-image: linear-gradient(to right bottom, $color-light-gray, $color-medium-gray, $color-dark-gray);
     position: absolute;
     top: 50%;
     left: 50%;
