@@ -25,6 +25,7 @@ class Enemy {
         this.newY = Math.random() * (canvas.height - this.height);
         this.frame = 0;
         this.flapSpeed = Math.floor(Math.random() * 3 + 1);
+        this.interval = Math.floor(Math.random() * 200 + 50);
         // this.angle = Math.random() * 500;
         // this.angleSpeed = Math.random() * 0.5 + 0.5;
         // //this.curve = Math.random() * 200 + 50;
@@ -36,15 +37,15 @@ class Enemy {
         //this.angle += this.angleSpeed;
         //this.x = 0;
         //this.y = 0;
-        if(gameFrame % 60 === 0){
+        if(gameFrame % this.interval === 0){
             this.newX = Math.random() * (canvas.width - this.width);
             this.newY = Math.random() * (canvas.height - this.height);
         };
 
         let dx = this.x - this.newX;
         let dy = this.y - this.newY;
-         this.x -= dx;
-         this.y -= dy;
+         this.x -= dx / 70;
+         this.y -= dy / 70;
         if(this.x + this.width < 0) this.x = canvas.width;
         // animate sprite
         if(gameFrame % this.flapSpeed === 0){
