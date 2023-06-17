@@ -36,6 +36,15 @@ class Enemy {
         //this.angle += this.angleSpeed;
         //this.x = 0;
         //this.y = 0;
+        if(gameFrame % 60 === 0){
+            this.newX = Math.random() * (canvas.width - this.width);
+            this.newY = Math.random() * (canvas.height - this.height);
+        };
+
+        let dx = this.x - this.newX;
+        let dy = this.y - this.newY;
+         this.x -= dx;
+         this.y -= dy;
         if(this.x + this.width < 0) this.x = canvas.width;
         // animate sprite
         if(gameFrame % this.flapSpeed === 0){
