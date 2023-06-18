@@ -32,11 +32,6 @@ class Enemy {
     }
 
     update(){
-        // this.x = canvas.width / 2 * Math.sin(this.angle * Math.PI / 200) + (canvas.width / 2 - this.width / 2);
-        // this.y = canvas.height / 2 * Math.cos(this.angle * Math.PI / 300) + (canvas.height / 2 - this.height / 2);
-        //this.angle += this.angleSpeed;
-        //this.x = 0;
-        //this.y = 0;
         if(gameFrame % this.interval === 0){
             this.newX = Math.random() * (canvas.width - this.width);
             this.newY = Math.random() * (canvas.height - this.height);
