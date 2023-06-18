@@ -5,7 +5,7 @@ const ctx = canvas.getContext('2d');
 CANVAS_WIDTH = canvas.width = 500;
 CANVAS_HEIGHT = canvas.height = 1000;
 
-const numberOfEnemies = 10;
+const numberOfEnemies = 30;
 const enemiesArray = [];
 
 let gameFrame = 0;
@@ -13,16 +13,16 @@ let gameFrame = 0;
 class Enemy {
     constructor(){
         this.image = new Image();
-        this.image.src = 'img/enemy3.png';
+        this.image.src = 'img/enemy4.png';
         this.speed = Math.random() * 4 + 1;
-        this.spriteWidth = 218;
-        this.spriteHeight = 177;
+        this.spriteWidth = 213;
+        this.spriteHeight = 213;
         this.width = this.spriteWidth / 2;
         this.height = this.spriteHeight / 2;
         this.x = Math.random() * (canvas.width - this.width);
         this.y = Math.random() * (canvas.height - this.height);
-        this.newX = Math.random() * (canvas.with - this.width);
-        this.newY = Math.random() * (canvas.height - this.height);
+        this.newX = Math.random() * canvas.width;
+        this.newY = Math.random() * canvas.height;
         this.frame = 0;
         this.flapSpeed = Math.floor(Math.random() * 3 + 1);
         this.interval = Math.floor(Math.random() * 200 + 50);
